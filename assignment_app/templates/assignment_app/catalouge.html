@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block page_heading %}<title>Catalouge</title>
+{% endblock %}
+
+{% block main_body %}
+<h2>Choose a car make to find out more!</h2>
+{% for car in car_list %}
+    <ul>
+    <li><a href = /car/{{car.id}}><h3>{{car.name|title}}</h3> - {{car.desc}}</a></li>
+    </ul>
+{% endfor %}
+{% endblock %}

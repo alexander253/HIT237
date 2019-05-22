@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block page_heading %}<title>Data Description</title>
+{% endblock %}
+
+{% block main_body %}
+
+<h2>Data Description</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Size</th>
+    <th>Constraints</th>
+    <th>Description</th>
+    <th>Example</th>
+
+  </tr>
+  <tr>
+    <td>Car_id</td>
+    <td>Integer</td>
+    <td>4</td>
+    <td>Primary Key/Not null</td>
+    <td>Unique identifier for each car</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>String</td>
+    <td>35</td>
+    <td>Not null</td>
+    <td>Manufacture Name of specific car</td>
+    <td>Maserati</td>
+  </tr>
+  <tr>
+    <td>Model</td>
+    <td>String</td>
+    <td>35</td>
+    <td>Not Null</td>
+    <td>Name of specific car model</td>
+    <td>AMG</td>
+  </tr>
+  <tr>
+    <td>Origin</td>
+    <td>String</td>
+    <td>35</td>
+    <td>Not Null</td>
+    <td>Country origin of manufacturer</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Cylinders</td>
+    <td>Integer</td>
+    <td>2</td>
+    <td>Not Null</td>
+    <td>Number of cylinders inside engine</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Year</td>
+    <td>Integer</td>
+    <td>4</td>
+    <td>Not Null</td>
+    <td>Year the specific car started production</td>
+    <td>2010</td>
+  </tr>
+  <tr>
+    <td>s_package</td>
+    <td>Boolean</td>
+    <td>True/False</td>
+    <td>Not Null</td>
+    <td>Whether the car will have a sports package option available</td>
+    <td>True</td>
+  </tr>
+  <tr>
+    <td>desc</td>
+    <td>String</td>
+    <td>100</td>
+    <td>Not Null</td>
+    <td>Short sales pitch accompanying nav links</td>
+    <td>This car will blow your socks off</td>
+  </tr>
+  <tr>
+    <td>Fact</td>
+    <td>String</td>
+    <td>100</td>
+    <td>Not Null</td>
+    <td>Short fun fact about the car</td>
+    <td>Did you know audi means....</td>
+  </tr>
+
+
+
+
+</table>
+
+{% endblock %}

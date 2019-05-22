@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block page_heading %}<title>Details</title>
+{% endblock %}
+
+{% block main_body %}
+    {% for car in car_list1 %}
+      {%if car.id == id%}
+
+      <h2>Details about the: {{car.name|title}} {{car.model|upper}}.</h2>
+        {%endif%}
+    {% endfor %}
+
+    <table style="width:100%">
+      <tr>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year manufactured</th>
+        <th>No. of Cylinders</th>
+        <th>Country of Origin</th>
+
+      </tr>
+      <tr>
+        <td>{{car.name|title}}</td>
+        <td>{{car.model|upper}}</td>
+        <td>{{car.year}}</td>
+        <td>{{car.cylinders}}</td>
+        <td>{{car.origin|title}}</td>
+      </tr>
+    </table>
+
+
+<p>Did you know, {{car.fact|lower}}?.</p>
+{% if car.s_package == True%}
+{%include 'assignment_app/package.html' %}
+{%else%}
+<em><p>This car currently does NOT come with a sports package, please contact us for more information.</p></em>
+{%endif%}
+
+{%if car.id == 1%}
+<img class="car_pic" src= "https://cdn1.autoexpress.co.uk/sites/autoexpressuk/files/styles/gallery_adv/public/2018/09/01_14.jpg?itok=Y-tnRFuJ">
+{%elif car.id == 2%}
+<img class="car_pic" src= "https://pictures.topspeed.com/IMG/crop/200907/ferrari-458-italia-2_1600x0w.jpg">
+{%elif car.id == 3%}
+<img class="car_pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/2015_Koenigsegg_Agera_N_%2819886243212%29.jpg/1200px-2015_Koenigsegg_Agera_N_%2819886243212%29.jpg">
+{%elif car.id == 4%}
+<img class="car_pic" src="https://cdn.motor1.com/images/mgl/JmVR6/s1/2019-audi-r8-onlocation.jpg">
+{%elif car.id == 5%}
+<img class="car_pic" src="https://i.pinimg.com/originals/c0/4a/1b/c04a1be659170ea2f53ed7df8493047f.jpg">
+{%endif%}
+
+
+{% for car in car_list1 %}
+    <ul class= "carlinks">
+    <li><a href = {{car.id}}>{{car.name|title}}</a></li>
+    </ul>
+{% endfor %}
+{% endblock %}

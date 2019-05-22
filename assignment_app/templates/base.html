@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <link rel="shortcut icon" href="{%  static 'mysite/images/favicon.ico' %}">
+    {% block page_heading %}
+    {% endblock %}
+
+      <a href = {% url 'home' %}><img src="{% static 'mysite/images/logo.png' %}" alt="My image" align="left"/></a>
+      <link href="{% static 'mysite/css/style.css' %}" rel="stylesheet">
+
+  </head>
+
+
+<header>
+  <h1>TEMPEST WORKS</h1>
+</header>
+
+
+<body>
+      {% block main_body %}
+      {% endblock %}
+
+      <nav>
+            <a href = {% url 'home' %}>Home</a>
+            <a href={% url 'catalouge' %}> Catalogue</a>
+            <a href =  {% url 'data' %}>Data Model</a>
+      </nav>
+
+        <footer class="blog-">© 2018 Tempest Cars  --  One stop shop for all exotic cars!</footer>
+</body>
+</html>

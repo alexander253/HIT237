@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+  Customer Details
+{% endblock %}
+
+{% block main_body %}
+  {% if car %}
+    <p>
+      <table border="2" width="100%">
+        <col style="width:30%">
+        <col style="width:70%">
+        <tbody>
+          <tr>
+            <td><strong>ID </strong></td>
+            <td>{{ car.id }}</td>
+          </tr>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td>{{ car.name }}</td>
+          </tr>
+
+            <td><strong>Status </strong></td>
+
+            {% if customer.inactive %}
+              <td style="background-color:red">
+                Inactive
+              </td>
+            {% else %}
+              <td style="background-color:green">
+                Active
+              </td>
+              {% endif %}
+
+
+        </tbody>
+      </table>
+    </p>
+  {% else %}
+    <h4 style="color:red">Invalid ID number. Record does not exist.</h4>
+  {% endif %}
+
+{% endblock %}
